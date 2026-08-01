@@ -1,0 +1,5 @@
+[00:00] Priya (Product Manager): The synchronous payment call is causing checkout timeouts. Engineering, can we accept the request first and process payment in the background?
+[00:18] Daniel (Developer): Yes. We would return 202, create a pending payment, enqueue PaymentJob, and have the worker update the final state. We also need an idempotency key.
+[00:42] Priya: I approve that approach for this release. The pending state is acceptable. Please make sure the architecture documentation explains it before launch.
+[00:58] Maya (Support): We still need to decide exactly what the customer sees when the background payment fails.
+[01:12] Priya: Agreed. That customer message is unresolved; do not invent it in the docs yet.

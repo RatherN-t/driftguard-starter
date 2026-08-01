@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: driftguard
+      POSTGRES_PASSWORD: driftguard
+      POSTGRES_DB: driftguard
+    ports:
+      - "5432:5432"
+    volumes:
+      - driftguard_postgres:/var/lib/postgresql/data
+
+volumes:
+  driftguard_postgres:

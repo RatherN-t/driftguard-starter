@@ -1,0 +1,12 @@
+{
+  "url": "https://github.com/example/driftguard-demo/pull/7",
+  "number": 7,
+  "title": "Move checkout payment processing to background worker",
+  "body": "Return 202 with pending state, enqueue PaymentJob, and add idempotency handling.",
+  "merged": true,
+  "merge_commit_sha": "demoabc123",
+  "files": [
+    "payment_api.py",
+    "payment_worker.py"
+  ]
+}

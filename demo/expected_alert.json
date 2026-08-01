@@ -1,0 +1,7 @@
+{
+  "relationship": "stale_documentation",
+  "severity": "high",
+  "pm_summary": "Checkout now accepts the request before payment finishes, so customers can temporarily see a pending state.",
+  "developer_summary": "The handler now creates a pending payment, enqueues PaymentJob, and returns HTTP 202; provider charging moved to payment_worker.py.",
+  "unresolved": "The customer-facing message for background payment failure remains undecided."
+}

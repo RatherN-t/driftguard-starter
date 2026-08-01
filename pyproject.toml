@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "driftguard"
+version = "0.1.0"
+description = "Source-backed semantic drift detection for product managers and developers"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "pydantic-settings",
+  "httpx",
+  "mistralai",
+  "google-api-python-client",
+  "google-auth",
+  "google-auth-httplib2",
+  "python-multipart",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-asyncio",
+  "ruff",
+]
+
+[tool.setuptools.packages.find]
+include = ["apps*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["apps/api/tests"]
+
+[tool.ruff]
+line-length = 100
